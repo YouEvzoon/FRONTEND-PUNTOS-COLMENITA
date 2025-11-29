@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 
 
+
 import Login from "../components/Login.vue";
 import RegistroUsuario from "../components/RegistroUsuario.vue";
 import Principal from "../components/Principal.vue";
@@ -8,6 +9,12 @@ import Configuracion from "../components/Principal.vue";
 import Puntos from "../components/puntos.vue";
 import HistoPunto from "../components/histopunto.vue";
 import Perfil from "../components/perfil.vue";
+import RestablecerContrasena from "../components/RestablecerContrasena.vue";
+  {
+    path: "/restablecer-contrasena",
+    name: "RestablecerContrasena",
+    component: RestablecerContrasena,
+  },
 
 const routes = [
   { path: "/", name: "Login", component: Login },
