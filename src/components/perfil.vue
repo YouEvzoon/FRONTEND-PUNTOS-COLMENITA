@@ -51,7 +51,7 @@ export default {
   methods: {
     cerrarSesion() {
       localStorage.clear();
-      this.$router.push('/');
+      this.$router.push({ name: 'Login' });
     },
     async cargarPerfil() {
       this.error = null;
