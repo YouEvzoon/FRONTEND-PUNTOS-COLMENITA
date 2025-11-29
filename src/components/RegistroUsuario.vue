@@ -4,7 +4,7 @@
       <h1 class="register-logo">Registro de Usuario</h1>
       <form @submit.prevent="handleRegister" class="register-form">
         <div class="form-group">
-          <input type="text" v-model="nombre" placeholder="Nombre completo" required />
+          <input type="text" v-model="nombre" @input="removeAccents" placeholder="Nombre completo" required />
         </div>
         <div class="form-group">
           <input type="email" v-model="correo" placeholder="Correo electrónico" required />
@@ -40,6 +40,11 @@ export default {
     };
   },
   methods: {
+    removeAccents(e) {
+      // Elimina tildes del nombre automáticamente
+      const value = e.target.value.normalize('NFD').replace(/[00-6f]/g, "");
+      this.nombre = value;
+    },
     async handleRegister() {
       try {
         const response = await axios.post(`${API_BASE_URL}/usuarios`, {
