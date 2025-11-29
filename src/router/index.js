@@ -10,11 +10,6 @@ import Puntos from "../components/puntos.vue";
 import HistoPunto from "../components/histopunto.vue";
 import Perfil from "../components/perfil.vue";
 import RestablecerContrasena from "../components/RestablecerContrasena.vue";
-  {
-    path: "/restablecer-contrasena",
-    name: "RestablecerContrasena",
-    component: RestablecerContrasena,
-  },
 
 const routes = [
   { path: "/", name: "Login", component: Login },
@@ -48,6 +43,11 @@ const routes = [
     name: "Perfil",
     component: Perfil,
   },
+  {
+    path: "/restablecer-contrasena",
+    name: "RestablecerContrasena",
+    component: RestablecerContrasena
+  }
 ];
 
 const router = createRouter({
