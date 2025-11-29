@@ -42,7 +42,7 @@ export default {
   methods: {
     removeAccents(e) {
       // Elimina tildes del nombre automáticamente
-      const value = e.target.value.normalize('NFD').replace(/[00-6f]/g, "");
+      const value = e.target.value.normalize('NFD').replace(/[\u00C0-\u00FF]/g, "");
       this.nombre = value;
     },
     async handleRegister() {
