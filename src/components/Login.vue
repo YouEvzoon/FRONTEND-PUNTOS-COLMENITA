@@ -10,7 +10,10 @@
           <input type="password" id="password" v-model="password" placeholder="Contraseña" required />
         </div>
         <a href="#" class="forgot-password">¿Ha olvidado su contraseña?</a>
-        <button type="submit" class="login-button">Iniciar sesión</button>
+        <button type="submit" class="login-button" :disabled="isLoading">
+          <span v-if="isLoading">Autenticando, espere...</span>
+          <span v-else>Iniciar sesión</span>
+        </button>
         <div class="divider">
           <span>o</span>
         </div>
@@ -34,10 +37,13 @@ export default {
       email: "",
       password: "",
       errorMessage: "", // Para manejar errores
+      isLoading: false, // Estado de carga para autenticación
     };
   },
   methods: {
     async handleLogin() {
+      if (this.isLoading) return;
+      this.isLoading = true;
       try {
         // Enviar solicitud al backend para verificar credenciales
         const response = await axios.post(`${API_BASE_URL}/usuarios/login`, {
@@ -70,6 +76,8 @@ export default {
         console.error("Error al iniciar sesión:", error);
         this.errorMessage = "Ocurrió un error al intentar iniciar sesión. Intente más tarde.";
         alert(this.errorMessage); // Mostrar alerta de error
+      } finally {
+        this.isLoading = false;
       }
     },
     goToRegister() {

@@ -15,7 +15,10 @@
         <div class="form-group">
           <input type="text" v-model="telefono" placeholder="Teléfono (opcional)" />
         </div>
-        <button type="submit" class="register-button">Registrar</button>
+        <button type="submit" class="register-button" :disabled="isLoading">
+          <span v-if="isLoading">Registrando, espere...</span>
+          <span v-else>Registrar</span>
+        </button>
       </form>
       <p v-if="successMessage" class="success-message">{{ successMessage }}</p>
       <p v-if="errorMessage" class="error-message">{{ errorMessage }}</p>
@@ -37,6 +40,7 @@ export default {
       telefono: "",
       errorMessage: "",
       successMessage: "",
+      isLoading: false,
     };
   },
   methods: {
@@ -46,6 +50,8 @@ export default {
       this.nombre = value;
     },
     async handleRegister() {
+      if (this.isLoading) return;
+      this.isLoading = true;
       try {
         const response = await axios.post(`${API_BASE_URL}/usuarios`, {
           nombre: this.nombre,
@@ -78,6 +84,8 @@ export default {
           this.errorMessage = error.message || "Ocurrió un error al intentar registrar el usuario. Intente más tarde.";
         }
         this.successMessage = "";
+      } finally {
+        this.isLoading = false;
       }
     },
   },
