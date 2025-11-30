@@ -9,7 +9,7 @@
         <div class="form-group">
           <input type="password" id="password" v-model="password" placeholder="Contraseña" required />
         </div>
-        <a href="#" class="forgot-password" @click.prevent="goToResetPassword">¿Ha olvidado su contraseña?</a>
+        <a href="#" class="forgot-password">¿Ha olvidado su contraseña?</a>
         <button type="submit" class="login-button">Iniciar sesión</button>
         <div class="divider">
           <span>o</span>
