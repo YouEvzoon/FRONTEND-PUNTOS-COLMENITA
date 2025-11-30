@@ -1,11 +1,19 @@
 <template>
   <div class="principal-container">
-    <h1>Bienvenido al sistema de puntos</h1>
+    <h1>Bienvenido al Sistema de Puntos de La Colmenita</h1>
     <p>
-      Consigue puntos mientras compras artículos en la tienda <b>La Colmenita</b>.<br>
-      Solicita tu código con el propietario cada que compres para acumular puntos y canjear recompensas.<br>
-      <br>
-      Las recompensas estarán disponibles en <b>diamantes</b> y <b>oro</b> de Blood Strike, o <b>CPs</b> de Call of Duty. Dependiendo de la cantidad de puntos que tengas, así serán tus recompensas.
+      ¡Acumula puntos cada vez que compras y canjea increíbles recompensas!<br><br>
+      <b>¿Cómo funciona?</b><br>
+      Por cada compra de Q10 en adelante en productos de la tienda, recibirás un código.<br>
+      Cada código cuenta como una visita y te permite acumular puntos.<br>
+      Las compras no se suman en una sola transacción; cada visita genera un código independiente.<br><br>
+      <b>¿Cuántos puntos puedes obtener?</b><br>
+      Por cada código puedes recibir entre 1 y 5 puntos, el valor es aleatorio.<br><br>
+      <b>¿Qué puedes ganar?</b><br>
+      Diamantes y oro para Blood Strike.<br>
+      CPs para Call of Duty.<br>
+      Entre más puntos acumules, mejores serán tus recompensas.<br><br>
+      <b>Importante:</b> Solicita tu código al propietario cada vez que realices una compra para que tus puntos se registren.
     </p>
     <!-- Puedes agregar aquí otros componentes o contenido principal -->
     <HeaderView class="footer-header" />
